@@ -15,7 +15,7 @@ const LoginOwner = async (req, res) => {
                 let token = GenerateToken(OwnerExists);
 
                 res.cookie("token", token);
-                res.render("ProductPage");
+                res.render("createProduct");
             }
             else {
                 req.flash("error", "Wrong Email/Password");

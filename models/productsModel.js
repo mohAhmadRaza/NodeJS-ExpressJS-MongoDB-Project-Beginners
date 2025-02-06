@@ -11,7 +11,7 @@ const ProductSchema = mongoose.Schema({
     BackgroundColor: String,
     PanelColor: String,
     TextColor: String,
-    Picture: String
+    Picture: Buffer
 });
 
 const ProductModel = mongoose.model("product", ProductSchema);
