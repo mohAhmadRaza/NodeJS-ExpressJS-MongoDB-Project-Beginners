@@ -4,28 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
     <div class="Accounts">
-      <div class="Part-1">
-        <h1>Welcome To <span class="extra">Scatch</span></h1>
-        <h3>Create You Account</h3>
-        <form action="/user/register" method="post">
-          <input type="text" placeholder="Full Name" name="Name" />
-          <input type="text" placeholder="Email" name="Email" />
-          <input type="password" placeholder="Password" name="Password" />
-          <input type="number" placeholder="Contact Number" name="Contact" />
-          <input class="button" type="submit" value="Sign Up" />
-        </form>
+      <div>
+        <h1>Welcome To The <span class="Extra">Scatch &#x1F91A;</span>, </h1>
       </div>
-      <div class="Part-2">
-        <h3>Login You Account</h3>
-        <form action="" method="post">
+      <div class="Both-Parts">
+        <div class="Part-1">
+          <h3>Create You Account</h3>
+          <form action="/user/signup" method="post">
+            <input type="text" placeholder="Full Name" name="Name" />
             <input type="text" placeholder="Email" name="Email" />
             <input type="password" placeholder="Password" name="Password" />
-            <input class="button" type="submit" value="Login" />
+            <input type="number" placeholder="Contact Number" name="Contact" />
+            <input class="button" type="submit" value="SignUp Now" />
           </form>
+        </div>
+        <div class="Part-2">
+          <h3>Login You Account</h3>
+          <form action="/user/login" method="post">
+            <input type="text" placeholder="Email" name="Email" />
+            <input type="password" placeholder="Password" name="Password" />
+            <input class="button" type="submit" value="Login Now" />
+          </form>
+        </div>
       </div>
     </div>
   </body>

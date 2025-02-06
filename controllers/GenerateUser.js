@@ -1,6 +1,13 @@
-const authenticate = function (req, res) {
+const UserModel = require('../models/customerModel');
+const GenerateToken = require('../utils/TokenGeneration');
+const bcrypt = require('bcrypt');
+const flash = require('connect-flash');
+
+const GenerateUser = function (req, res) {
     try {
+
       let { Name, Email, Password, Contact } = req.body;
+
       console.log(Name);
       bcrypt.genSalt(10, function(err, salt) {
           bcrypt.hash(Password, salt, async function(err, hash) {
@@ -17,8 +24,9 @@ const authenticate = function (req, res) {
   
       res.send(newUser);
     } catch (error) {
-      res.send(error);
+      req.flash("error", error);
+      return res.redirect("/");
     }
 };
 
-module.exports = authenticate;
+module.exports = GenerateUser;

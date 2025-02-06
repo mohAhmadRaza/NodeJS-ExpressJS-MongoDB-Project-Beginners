@@ -3,6 +3,8 @@ const bcrypt = require('bcrypt');
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 const path = require('path');
+const flash = require('connect-flash');
+const expressSession = require('express-session');
 
 //Configuration of env's
 require('dotenv').config();
@@ -27,7 +29,14 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(flash());
 app.set("view engine", 'ejs');
+app.use(expressSession({
+    secret: process.env.SESSION_KEY,
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true },
+}))
 
 //Setting Routes
 app.use('/owner', OwnerRoutes);
