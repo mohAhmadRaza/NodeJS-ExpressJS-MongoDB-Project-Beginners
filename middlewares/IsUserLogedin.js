@@ -1,8 +1,8 @@
 const cookieParser = require('cookie-parser');
 const UserModel = require('../models/customerModel');
+const jwt = require('jsonwebtoken');
 
 const IsUserLogedin = (req, res, next) => {
-
     let token = req.cookies.token;
 
     if (typeof(token) != 'undefined'){

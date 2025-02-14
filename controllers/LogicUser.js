@@ -3,28 +3,29 @@ const bcrypt = require('bcrypt');
 const GenerateToken = require('../utils/TokenGeneration');
 
 const LoginUser = async (req, res) => {
+    try {
+        let { Email, Password } = req.body;
+        let UserExists = await UserModel.findOne({ Email: Email });
 
-    let {Email, Password} = req.body;
+        if (!UserExists) {
+            req.flash("error", "User Not Found");
+            return res.redirect("/");
+        }
 
-    let UserExists = await UserModel.findOne({Email: Email});
-
-    if (UserExists){
-        bcrypt.compare(Password, UserExists.Password, function(err, result) {
-
-            if (result){
-                let token = GenerateToken(UserExists);
-
-                res.cookie("token", token);
-                res.render("createProduct");
-            }
-            else {
-                req.flash("error", "Email/Password not correct");
-                return res.redirect("/");
-            }
-        });
-    }
-    else{
-        req.flash("error", "User Not Found");
+        const isMatch = await bcrypt.compare(Password, UserExists.Password);
+        
+        if (isMatch) {
+            let token = GenerateToken(UserExists);
+            res.cookie("token", token);
+            req.flash("success", "Successfully Login!");
+            return res.redirect("/user/successfullylogin");
+        } else {
+            req.flash("error", "Email/Password not correct");
+            return res.redirect("/");
+        }
+    } catch (err) {
+        console.error("Login Error:", err);
+        req.flash("error", "Something went wrong, please try again.");
         return res.redirect("/");
     }
 };

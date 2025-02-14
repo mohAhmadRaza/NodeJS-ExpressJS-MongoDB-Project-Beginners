@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
+    <% if (error_msg.length > 0) { %>
+      <div class="error-container">
+        <% error_msg.forEach(msg => { %>
+          <p class="error-message"><%= msg %></p>
+        <% }) %>
+      </div>
+    <% } %>
+    
+    <% if (success_msg.length > 0) { %>
+      <div class="error-container">
+        <% success_msg.forEach(msg => { %>
+          <p class="success-message"><%= msg %></p>
+        <% }) %>
+      </div>
+    <% } %>
     <div class="Accounts">
       <div>
         <h1>Welcome To The <span class="Extra">Scatch &#x1F91A;</span>, </h1>

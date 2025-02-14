@@ -64,3 +64,28 @@ form input {
     color: rgb(255, 237, 194);
 }
 
+.error-container {
+    background-color: rgb(161, 91, 0);
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.error-message, .success-message {
+    padding: 10px 50px;
+    font-weight: bold;
+    border-radius: 20px;
+    color: white;
+}
+
+.error-message {
+    background-color: red;
+} 
+
+.success-message {
+    background-color: rgb(19, 19, 184);
+}
+

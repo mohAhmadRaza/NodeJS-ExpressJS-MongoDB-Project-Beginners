@@ -8,6 +8,9 @@ const LogoutUser = require('../controllers/LogoutUser');
 router.get("/", function(req, res) {res.send("User");});
 
 router.post("/signup", GenerateUser);
+router.get("/successfullylogin", function(req, res)
+{res.render("createProduct")}
+);
 router.post("/login", LoginUser);
 router.get("/logout",IsUserLogedin, LogoutUser);
 

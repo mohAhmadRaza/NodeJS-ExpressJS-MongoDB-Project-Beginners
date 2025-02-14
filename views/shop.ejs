@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/shopstyle.css"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="Products">
+        <div class="sidebar">
+            <div class="section2">
+                <div class="section2-content">
+                    <i class='bx bxs-home-alt-2'></i>
+                    <div class="description">
+                        <h2>Home</h2>
+                        <p>Go to home</p>
+                    </div>
+                </div>
+                <div class="section2-content">
+                    <i class='bx bxs-collection' ></i>
+                    <div class="description">
+                        <h2>New Colection</h2>
+                        <p>Check our new collection</p>
+                    </div>
+                </div>
+                <div class="section2-content">
+                    <i class='bx bxs-sushi' ></i>
+                    <div class="description">
+                        <h2>All Products</h2>
+                        <p>View our all products</p>
+                    </div>         
+                </div>
+                <div class="section2-content">
+                    <i class='bx bx-money-withdraw' ></i>
+                    <div class="description">
+                        <h2>Discounted Products</h2>
+                        <p>Grab the sales now.</p>
+                    </div>
+                </div>
+                <div class="section2-content">
+                    <i class='bx bx-bookmark-minus' ></i>
+                    <div class="description">
+                        <h2>Availablity</h2>
+                        <p>Filter by availability</p>
+                    </div>
+                </div>
+                <div class="section2-content">
+                    <i class='bx bxs-purchase-tag-alt' ></i>
+                    <div class="description">
+                        <h2>Prices</h2>
+                        <p>Filter by discounts</p>
+                    </div>
+                </div>
+                <div class="section2-content">
+                    <i class='bx bxl-netlify' ></i>
+                    <div class="description">
+                        <h2>Popular Products</h2>
+                        <p>Sort by popular products</p>
+                    </div>
+                </div>
+                <div class="section2-content">
+                    <i class='bx bxs-color' ></i>
+                    <div class="description">
+                        <h2>Sales</h2>
+                        <p>Sort by sales</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="AllProducts">
+            <div class="products-row">
+                <% AllProducts.forEach(function(product){ %>
+                    <div class="product p1">
+                        <div class="product-Image">
+                            <img src="data:image/jpeg;base64, <%= product.Picture.toString('base64') %>">
+                        </div>
+                        <div class="product-price">
+                            <div class="price-section">
+                                <p><%= product.Name %></p>
+                                <p><%= product.Price %></p>
+                            </div>
+                            <i class='bx bxs-message-square-add'></i>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

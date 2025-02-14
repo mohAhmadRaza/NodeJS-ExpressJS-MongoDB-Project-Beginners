@@ -12,9 +12,4 @@ if (process.env.CURRENT_STATE == "development"){
 
 router.post('/login', LoginOwner);
 
-router.get("/addproducts", function(req, res){
-  
-
-})
-
 module.exports = router;

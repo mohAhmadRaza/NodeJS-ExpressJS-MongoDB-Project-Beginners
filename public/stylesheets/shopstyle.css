@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:wght@300;400;500;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.Products {
+    display: flex;
+    justify-content: space-evenly;
+    height: 100vh;
+    width: quto;
+    background-color: white;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: white;
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 100px;
+    border-right: 1px solid grey;
+}
+
+.section1 {
+    width: 100%; 
+}
+
+.section2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 3px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+}
+
+.section2-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid grey;
+    width: 100%;
+    margin: 0px;
+    padding-left: 20px;
+    gap: 10px;
+}
+
+.section-content:hover, .section2-content .description p:hover, .section2-content .description h2:hover {
+    color: orange; /* Changes text color */
+}
+
+.section-content:hover {
+    border: 2px solid orange;
+}
+
+
+.section2-content i {
+    padding-top: 3px;
+    font-size: 30px;
+    font-weight: 700;
+    color: rgb(99, 99, 99);
+}
+
+.section2-content .description h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(99, 99, 99);
+}
+
+.section2-content .description p {
+    font-size: 15px;
+    font-weight: 300px;
+}
+
+.section3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 3px;
+    border-bottom: 1px solid grey;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.section3 a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.section3 h3 {
+    color: blueviolet;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.AllProducts {
+    width: 80%;
+    padding-top: 1.5rem;
+    padding-top: 50px;
+}
+
+.products-row {
+    padding-left: 15px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 17px;
+    flex-wrap: wrap;
+}
+
+.product {
+    width: 18.5%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    background-color: #f4f1a7;
+    margin-bottom: 20px;
+}
+
+.product-Image {
+    height: 80%;
+    width: 100%;
+}
+
+.product-price {
+    height: 20%;
+    background-color: #000000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 10px; 
+    transition: 0.5s;
+}
+
+.product-price i {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.price-section {
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    width: 100%;
+}
+
+.sidebar .section2 .section2-content:nth-child(8) {
+    border-bottom: 0;
+}
+
+.product-Image {
+    width: 100%;
+    height: 240px;
+    display: flex;
+}
+
+.product-Image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-Image img {
+    width: 100%; 
+    height: auto;
+    transition: transform 0.5s ease-out; /* Smooth transition */
+}
+
+.product-Image:hover img {
+    transform: scale(0.9); /* Slight zoom-out effect */
+}
+
+.product-price:hover {
+    background-color: rgb(34, 34, 34);
+}

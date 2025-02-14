@@ -35,8 +35,16 @@ app.use(expressSession({
     secret: process.env.SESSION_KEY,
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: true },
-}))
+    cookie: { secure: false },
+}));
+
+
+//For flash messages
+app.use((req, res, next) => {
+    res.locals.error_msg = req.flash('error');
+    res.locals.success_msg = req.flash('success');
+    next();
+});
 
 //Setting Routes
 app.use('/owner', OwnerRoutes);
