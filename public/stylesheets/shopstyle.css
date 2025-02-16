@@ -5,6 +5,7 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
 }
 
 .Products {
@@ -25,6 +26,10 @@
     align-items: flex-start;
     gap: 100px;
     border-right: 1px solid grey;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    overflow: auto;
 }
 
 .section1 {
@@ -50,7 +55,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    padding-top: 10px;
+    padding-top: 14px;
     padding-bottom: 25px;
     border-bottom: 1px solid grey;
     width: 100%;
@@ -111,19 +116,20 @@
 }
 
 .AllProducts {
-    width: 80%;
-    padding-top: 1.5rem;
-    padding-top: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 90px;
 }
 
 .products-row {
-    padding-left: 15px;
-    margin-bottom: 100px;
+    padding: 0px 20px;
+    margin-bottom: 50px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 17px;
     flex-wrap: wrap;
+    margin-left: 320px;
 }
 
 .product {
@@ -135,7 +141,7 @@
     align-items: flex-start;
     justify-content: space-evenly;
     background-color: #f4f1a7;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .product-Image {
@@ -150,12 +156,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
     padding: 10px 10px; 
     transition: 0.5s;
 }
 
-.product-price i {
+.product-price a {
     font-size: 20px;
     color: rgb(255, 255, 255);
 }
@@ -196,3 +201,65 @@
 .product-price:hover {
     background-color: rgb(34, 34, 34);
 }
+
+.Navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 150px;
+    border-bottom: 1px solid rgb(201, 201, 201);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 9999;
+}
+
+.Leftpanel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.Leftpanel a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+    color: black;
+    transition: .3s;
+}
+
+.RightPanel .menu a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+    color: black;
+    transition: .3s;
+}
+
+.Leftpanel a:hover {
+    border-bottom: 1px solid rgb(205, 205, 205);
+}
+.RightPanel .menu a:hover {
+    border-bottom: 1px solid rgb(205, 205, 205);
+}
+.Leftpanel a:hover {
+    border-bottom: 1px solid rgb(205, 205, 205);
+}
+
+.Navbar .menu i {
+    font-size: 23px;
+    color: rgb(0, 0, 0);
+}
+
+.Navbar .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+

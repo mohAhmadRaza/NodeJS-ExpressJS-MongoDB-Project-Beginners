@@ -40,13 +40,6 @@
                     </div>
                 </div>
                 <div class="section2-content">
-                    <i class='bx bx-bookmark-minus' ></i>
-                    <div class="description">
-                        <h2>Availablity</h2>
-                        <p>Filter by availability</p>
-                    </div>
-                </div>
-                <div class="section2-content">
                     <i class='bx bxs-purchase-tag-alt' ></i>
                     <div class="description">
                         <h2>Prices</h2>
@@ -70,9 +63,25 @@
             </div>
         </div>
         <div class="AllProducts">
+            <nav class="Navbar">
+                <div class="RightPanel">
+                  <div class="menu">
+                    <i class="bx bx-log-out-circle"></i>
+                    <a href="/user/Logout">Logout</a>
+                  </div>
+                </div>
+                <div class="Midpanel">
+                  <h2>Scatch</h2>
+                </div>
+                <div class="Leftpanel">
+                  <a href="#">Account</a>
+                  <a href="/cart">Cart</a>
+                  <a href="/shop">Shop</a>
+                </div>
+              </nav>
             <div class="products-row">
                 <% AllProducts.forEach(function(product){ %>
-                    <div class="product p1">
+                    <div class="product">
                         <div class="product-Image">
                             <img src="data:image/jpeg;base64, <%= product.Picture.toString('base64') %>">
                         </div>
@@ -81,7 +90,7 @@
                                 <p><%= product.Name %></p>
                                 <p><%= product.Price %></p>
                             </div>
-                            <i class='bx bxs-message-square-add'></i>
+                            <a href="/addtocart/<%= product._id %>"><i class='bx bxs-message-square-add'></i></a>
                         </div>
                     </div>
                 <% }) %>

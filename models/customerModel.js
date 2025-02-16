@@ -3,10 +3,10 @@ const mongoose = require('mongoose');
 const customerSchema = mongoose.Schema({
     Name: String,
     Email: String,
-    Cart: {
-        type: Array,
-        default: []
-    },
+    Cart: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"product",
+    }],
     Password: String,
     Orders: {
         type: Array,

@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.Navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 150px;
+    border-bottom: 1px solid rgb(201, 201, 201);
+    margin-bottom: 4.5rem;
+}
+
+.Leftpanel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.Leftpanel a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+    color: black;
+    transition: .3s;
+}
+
+.RightPanel .menu a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+    color: black;
+    transition: .3s;
+}
+
+.Leftpanel a:hover {
+    border-bottom: 1px solid rgb(205, 205, 205);
+}
+.RightPanel .menu a:hover {
+    border-bottom: 1px solid rgb(205, 205, 205);
+}
+.Leftpanel a:hover {
+    border-bottom: 1px solid rgb(205, 205, 205);
+}
+
+.Navbar .menu i {
+    font-size: 23px;
+    color: rgb(0, 0, 0);
+}
+
+.Navbar .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+
+.mainSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.mainSection .mainleftPanel {
+    width: 55%;
+}
+
+.mainSection .mainleftPanel input {
+    width: 100%;
+    padding: 10px 8px;
+    border: 1px solid rgb(224, 224, 224);
+    margin-bottom: 10px;
+    outline: none;
+    font-size: 15px;
+}
+
+.mainSection .mainleftPanel .Names {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainSection .mainleftPanel .Names input {
+    width: 49%;
+}
+
+.mainSection .mainleftPanel .Location input {
+    width: 32%;
+}
+
+.mainSection .mainleftPanel .Location {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainSection .mainleftPanel .shipping {
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    border: 0;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.mainSection .mainleftPanel .shipping:hover {
+    background-color: rgb(225, 255, 0);
+    color: rgb(0, 0, 0);
+}
+
+.mainSection .mainleftPanel h3 {
+    margin-bottom: 15px;
+}
+
+.mainSection .mainleftPanel p {
+    margin-bottom: 7px;
+}
+
+.mainSection .mainrightPanel .rightUpperPanel {
+    padding: 20px 20px;
+    background-color: #F4F6FA;
+    margin-bottom: 20px;
+}
+
+.mainSection .mainrightPanel {
+    width: 35%;
+}
+
+.Products {
+    margin-bottom: 20px;
+}
+.AllProducts {
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgb(205, 205, 205);
+    padding-bottom: 15px;
+}
+
+.Price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.discount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0px;
+    font-weight: 600;
+}
+
+.Discounts {
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgb(205, 205, 205);
+    margin-bottom: 30px;
+}
+
+.mainSection .mainrightPanel .rightLowerPanel {
+    padding: 20px 20px;
+    background-color: transparent;
+    border: 1px solid rgb(205, 205, 205);
+    color: rgb(153, 153, 153);
+}
+
+.points {
+    margin: 10px 0px;
+}
+
+.point1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+.points .round {
+    border: 2px solid rgb(153, 153, 153);
+    border-radius: 50%;
+    padding: 0px 10px;
+}

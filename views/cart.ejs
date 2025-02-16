@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheets/cart.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="Navbar">
+      <div class="RightPanel">
+        <div class="menu">
+          <i class="bx bx-log-out-circle"></i>
+          <a href="/user/Logout">Logout</a>
+        </div>
+      </div>
+      <div class="Midpanel">
+        <h2>Scatch</h2>
+      </div>
+      <div class="Leftpanel">
+        <a href="#">Account</a>
+        <a href="/cart">Cart</a>
+        <a href="/shop">Shop</a>
+      </div>
+    </nav>
+
+    <div class="section">
+      <div class="CartProducts">
+        <h1>Your Cart</h1>
+        <% User.Cart.forEach(function(product, index) { %>
+        <div class="product">
+          <img src="data:image/jpeg;base64, <%= product.Picture.toString('base64') %>"/>
+          <div class="ProductDetails">
+            <div class="NamePrice">
+              <h2><%= product.Name %></h2>
+              <p><%= product.Price%> -/</p>
+            </div>
+            <p class="Discount">Discount 10% OFF</p>
+            <p class="Discount" style="width:26%">Sale 5% OFF</p>
+            <div class="NamePrice">
+              <p>Delivery Fee</p>
+              <p>30 -/</p>
+            </div>
+            <div class="NamePrice">
+              <h3 style="margin-top: 3px;">Total Price</h3>
+              <h3 id="Price<%= index%>"><%= finalBill[index] %> -/</h3>
+            </div>
+            <div class="removeInc">
+              <div class="butt">
+                  <a class="RemoButt" href="/removefromcart/<%= product._id %>">Remove From Cart</a>
+              </div>
+              <div class="increment">
+                <p>Quantity - <span id="quantity<%= index %>">1</span></p>
+                <button class="IncButton" onclick="Increment(<%= index %>)">+</button> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      <div class="Checkout">
+        <h2>Order Summary</h2>
+        <p style="margin-top: 15px;">Do you have a promo code?</p>
+        <div class="Promo">
+          <input class="Text" type="text" placeholder="Do you have a promo code?">
+          <input class="Apply" type="submit" value="Apply">
+        </div>
+        <div class="subtotal">
+          <p>Sub Total</p>
+          <p>269 -/</p>
+        </div>
+        <div class="total">
+          <h3>Total</h3>
+          <h3 id="total"><%= sum %> -/</h3>
+        </div>
+        <p style="padding: 25px 0px; font-size: 15px; text-align: justify; border-bottom: 1px solid rgb(235, 235, 235); line-height: 15px;">Free return within 30 days for PK orders only. Return fees for international orders vary by country.</p>
+        <a class="checkoutbutt" href="/checkoutPage">CHECKOUT</a>
+      </div>
+    </div>
+    <script>
+      function Increment(index) {
+        let quantityElement = document.getElementById(`quantity${index}`);
+        let num = parseInt(quantityElement.innerText, 10);
+        quantityElement.innerText = num + 1;
+
+        let price = document.getElementById(`Price${index}`);
+        let intPrice = parseInt(price.innerText, 10);
+        console.log(intPrice);
+
+        let total = document.getElementById('total');
+        let intTotal = parseInt(total.innerText, 10);
+        console.log(intTotal);
+        total.innerText = (intPrice + intTotal).toString() + ' -/';
+      }
+    </script>
+  </body>
+</html>

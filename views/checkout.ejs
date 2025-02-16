@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheets/checkout.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="Navbar">
+        <div class="RightPanel">
+          <div class="menu">
+            <i class="bx bx-log-out-circle"></i>
+            <a href="/user/Logout">Logout</a>
+          </div>
+        </div>
+        <div class="Midpanel">
+          <h2>Scatch</h2>
+        </div>
+        <div class="Leftpanel">
+          <a href="#">Account</a>
+          <a href="/cart">Cart</a>
+          <a href="/shop">Shop</a>
+        </div>
+      </nav>
+    <div class="mainSection">
+      <div class="mainleftPanel">
+        <form action="/" method="post">
+          <h3>EMAIL</h3>
+          <input style="margin-bottom: 25px"
+            id="email"
+            type="email"
+            name="Email"
+            placeholder="Email Address*"
+            required
+          />
+          <h3>SHIPPING</h3>
+          <div class="Names">
+            <input
+              type="text"
+              name="FirstName"
+              placeholder="First Name"
+              required
+            />
+            <input
+              type="text"
+              name="SecondName"
+              placeholder="Second Name"
+              required
+            />
+          </div>
+          <input type="tel" name="Phone" placeholder="Phone*" required />
+          <input type="text" name="Address" placeholder="Address*" required />
+          <div class="Location">
+            <input type="text" name="City" placeholder="City*" required />
+            <input type="text" name="State" placeholder="State*" required />
+            <input
+              type="text"
+              name="ZipCode"
+              placeholder="ZIP Code*"
+              required
+            />
+          </div>
+          <input type="text" name="Country" placeholder="Country*" required />
+          <input class="shipping" type="submit" value="Continue Shipping" />
+        </form>
+
+        <p><strong>Order now, estimated delivery by:</strong></p>
+        <p>Enter you ZIP Code for an estimate</p>
+
+        <h3 style="margin-top: 60px">Payment Method</h3>
+      </div>
+      <div class="mainrightPanel">
+        <div class="rightUpperPanel">
+          <h2 style="margin-bottom:20px">Cart Summary</h2>
+          <div class="AllProducts">
+            <% user.Cart.forEach(function(product, index) { %>
+            <div class="Products">
+              <div class="Price">
+                <p style="font-weight: 600;"><%= index+1 %> - <%= product.Name %></p>
+                <p><strong><%= finalPrices[index] %> -/</strong></p>
+              </div>
+              <p style="margin-left:22px; margin-top:5px;">Discount Offered: <%= product.Discount%> -/</p>
+            </div>
+            <% }) %>
+          </div>
+          <div class="Discounts">
+            <div class="discount">
+              <p>Subtotal(<%= finalPrices.length %>)</p>
+              <p><%= totalBill %> -/</p>
+            </div>
+            <div class="discount">
+              <p>Est. Delivery</p>
+              <p>Included</p>
+            </div>
+            <div class="discount">
+              <p>Estimated Tax</p>
+              <p>-</p>
+            </div>
+          </div>
+          <div class="discount">
+            <h3>Estimated Total</h3>
+            <h3><%= totalBill %> -/</h3>
+          </div>
+          <p style="padding:20px 0px">As low as -/59 per month fro 43 omnths at 0% APR.</p>
+        </div>
+        <div class="rightLowerPanel">
+          <h3>100 DAY HOME TRIAL</h3>
+          <div class="points">
+            <div class="point1">
+              <p class="round">1</p>
+              <p>Try Sactch at home for 100 days</p>
+            </div>
+            <div class="point1">
+              <p class="round" style="padding: 0px 8px;">2</p>
+              <p>Explore thousands of products, live and on demand</p>
+            </div>
+            <div class="point1">
+              <p class="round" style="padding: 0px 8px;">3</p>
+              <p>Not for you? w'll refund your entire product.</p>
+            </div>
+          </div>
+          <p style="font-size: 13px; text-decoration: underline;">Limited Time offer.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
